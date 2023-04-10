@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<div id="top"></div>
+        <head>
+            <title>Interacting with Data</title>
+            <link rel="stylesheet" href="vote_style.css">
+        </head>
+    <body>
+        <p><div style="text-align: right;"><b>Reach 100 Votes:</b> <span id="counter">0</div></span></p>
+        <div style="text-align: right;"><button id = "increment-btn" onclick="incrementCounter()">Vote!</div></button>
+
+        <style>
+            #image-container {
+              display: flex;
+              justify-content: flex-end;
+            }
+        </style>
+
+        <script>
+        function incrementCounter() {
+        var counterElement = document.getElementById("counter");
+        var counterValue = parseInt(counterElement.innerHTML);
+        counterValue++;
+        counterElement.innerHTML = counterValue;
+        
+        if (counterValue === 100) {
+            document.getElementById("image1").style.display = "block";
+            document.getElementById("increment-btn").disabled = true;
+            document.getElementById("counter").innerHTML = "Congratulations!";
+        }
+    }
+        </script>
+        <div id="image-container" display="flex">
+            <img src="voted.jpg" id="image1" style="display: none;" width="10%" height="10%">
+        </div>
+    	<p><span class="italic">Data used for this project can be found from </span> <a href="https://github.com/fivethirtyeight/data/tree/master/non-voters">GitHub,</a>
+        <a href="https://apps.elections.virginia.gov/SBE_CSV/ELECTIONS/ELECTIONTURNOUT/"> Virginia.gov</a>
+        </span></p>
+        <p><span class="italic"> Check out the behind story of these data from this </span> <a href="https://projects.fivethirtyeight.com/non-voters-poll-2020-election/">article</a>
+        by FiveThirtyEight</span></p>
+        <div style="text-align: center;"><h1>Why Many Americans Don't Vote</h1></div>
+        <iframe src="https://www.npr.org/player/embed/947182471/947278224" width="20%" height="30%" frameborder="0" scrolling="no" title="NPR embedded audio player"></iframe>
+        <iframe width="560" height="250" src="https://www.youtube.com/embed/PajchobBI9k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <h2>Question 1: Does frequency of voting change with income and education levels?</h2>
+        <div style="text-align: center;"><h3><i>Parallel Categories Plot</i></h3></div>
+        <iframe src="categories.html" width="90%" height="80%" frameBorder="0"> </iframe>
+        <p> By observing the parallel categories plot, there are some evident relationships between voting 
+            frequency and income/education. With little math, it shows that <b>about 46% of voters who always vote, 
+            31% of sporadic voters, and 23% of voters who rarely/never vote have achieved college education.</b> Hence,
+            those who have higher education tend to care more about voting. That being said, it is hard to find a clear 
+            relationship between voting frequency and income category. There is a relationship between level of education and income. 
+            <b>For each group of voters, more than half of people with college level education fall into the $75-$125k or more category.</b>
+            On the other hand, more than of people with high school or less education fall within the less than $75k category.
+             People with some college education tend to be distributed evenly between higher and lower incomes. 
+        </p>
+        <h2>Question 2: How did voter turnout and absentee voting change in Virginia General Elections from 2014 to 2022?</h2>
+        <div style="text-align: center;"><h3><i>Bubble Plot</i></h3></div>
+        <iframe src="bubble.html" width="100%" height="100%" frameBorder="0"></iframe>
+        <h3>Percent Turnout > 100% were observed, but removed.</h3>
+        <p> Based on the bubble plot observation, the year 2020 looks different from the other years.
+            In general, the year 2020 had a sharp increase in percent absentee (all localities before 2020 stayed below 40% absentee whereas most localities had above 40% absentee in 2020). 
+            This was largely due to the COVID-19: a world-wide pandemic that marked its beginning in early 2020. During the pandemic, people were quarantined at home and extremely cautious of contacting others.
+            Hence, people preferred absentee ballots instead of on-site votings that could potentially increase the risk of being infected by the virus. 
+            Creating separate plots for each year would have been easier for viewers to determine that the year 2020 was different. 
+            With animation frames, viewers have to manually compare different plots by navigating the years. 
+            The comparison is difficult because viewers must rely on their memory of the previous plot to compare with the current displayed.
+            Therefore, showing separate plots for all years simultaneously will enable easier comparisons for the viewer.
+        </p>
+        <h2>Question 3: What geographic trends in voter turnout are revealed by the map? Explain based on what you see in your visualization.</h2>
+        <div style="text-align: center;"><h3><i>Choropleth Map</i></h3></div>
+        <iframe src="map.html" width="100%" height="80%" frameBorder="0"></iframe>
+        <p> In general, the choropleth reveals that localities in West Virginia tend to have lower voter turnouts than those localities in the east. 
+            Specifically, the middle east part of Virginia tends to have higher voter turnouts since the regions in the choropleth map have darker red color. 
+            Also, Northern Virginia also has a high voter turnouts. 
+        </p><div style="text-align: right;"><a href="#top">Back to top</a></div>
+
+    </body>
+</html>
